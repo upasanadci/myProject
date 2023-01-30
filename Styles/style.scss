@@ -1,0 +1,50 @@
+$bg-color:blue;
+$text-color:white;
+$text-padding:10px;
+
+@import './header1';
+@import './common';
+
+
+@mixin flexCenter(){
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+
+
+.info{
+    @include flexCenter();
+    background-color: $bg-color;
+    margin-top: 10px;
+    
+    ul{
+        list-style: none;
+    }
+    li{
+        color:$text-color;
+        display: inline-block;
+        padding: $text-padding;
+   
+    &:hover::after{
+        content: 'hello';
+    }
+    }
+}
+
+
+main{
+    height: 600px;
+   @include flexCenter();
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 0px auto;
+}
+
+@media screen and (max-width:600px){
+    main{
+        border:2px solid red;
+        width:80%
+    }
+}
